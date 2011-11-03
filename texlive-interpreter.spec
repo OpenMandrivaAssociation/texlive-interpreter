@@ -1,3 +1,9 @@
+# revision 23399
+# category Package
+# catalog-ctan /macros/luatex/generic/interpreter
+# catalog-date 2011-07-12 12:52:39 +0200
+# catalog-license lppl
+# catalog-version 1.0
 Name:		texlive-interpreter
 Version:	1.0
 Release:	1
@@ -53,6 +59,7 @@ plain TeX and LaTeX, but not ConTeXt.
 %doc %{_texmfdistdir}/doc/luatex/interpreter/interpreter-doc.pdf
 %doc %{_texmfdistdir}/doc/luatex/interpreter/interpreter-doc.tex
 %doc %{_texmfdistdir}/doc/luatex/interpreter/interpreter-doc.txt
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -63,3 +70,5 @@ plain TeX and LaTeX, but not ConTeXt.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
