@@ -1,11 +1,11 @@
-# revision 23399
+# revision 24740
 # category Package
 # catalog-ctan /macros/luatex/generic/interpreter
-# catalog-date 2011-07-12 12:52:39 +0200
+# catalog-date 2011-12-03 20:00:45 +0100
 # catalog-license lppl
-# catalog-version 1.0
+# catalog-version 1.1
 Name:		texlive-interpreter
-Version:	1.0
+Version:	1.1
 Release:	1
 Summary:	Translate input files on the fly
 Group:		Publishing
@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 The package preprocesses input files to a Lua(La)TeX run, on
@@ -31,23 +29,24 @@ processing. The source of the documentation is typed in such a
 lightweight language and is thus easily readable in a text
 editor (the PDF file is also available, of course); the
 transformation to TeX syntax via Interpreter's functions is
-explained in the documentation itself. Interpreter works for
-plain TeX and LaTeX, but not ConTeXt.
+explained in the documentation itself. Interpreter is
+implemented using the author's gates (lua version), and works
+for plain TeX and LaTeX, but not ConTeXt.
 
 %pre
-    %_texmf_mktexlsr_pre
+    %{_sbindir}/texlive.post
 
 %post
-    %_texmf_mktexlsr_post
+    %{_sbindir}/texlive.post
 
 %preun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
+	%{_sbindir}/texlive.post
     fi
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
