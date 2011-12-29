@@ -33,16 +33,8 @@ explained in the documentation itself. Interpreter is
 implemented using the author's gates (lua version), and works
 for plain TeX and LaTeX, but not ConTeXt.
 
-%pre
-    %{_sbindir}/texlive.post
-
 %post
     %{_sbindir}/texlive.post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-    fi
 
 %postun
     if [ $1 -eq 0 ]; then
@@ -59,7 +51,6 @@ for plain TeX and LaTeX, but not ConTeXt.
 %doc %{_texmfdistdir}/doc/luatex/interpreter/interpreter-doc.pdf
 %doc %{_texmfdistdir}/doc/luatex/interpreter/interpreter-doc.tex
 %doc %{_texmfdistdir}/doc/luatex/interpreter/interpreter-doc.txt
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -70,5 +61,3 @@ for plain TeX and LaTeX, but not ConTeXt.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
