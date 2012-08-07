@@ -1,12 +1,12 @@
-# revision 24740
+# revision 27232
 # category Package
 # catalog-ctan /macros/luatex/generic/interpreter
-# catalog-date 2011-12-03 20:00:45 +0100
+# catalog-date 2012-06-10 11:15:14 +0200
 # catalog-license lppl
-# catalog-version 1.1
+# catalog-version 1.2
 Name:		texlive-interpreter
-Version:	1.1
-Release:	2
+Version:	1.2
+Release:	1
 Summary:	Translate input files on the fly
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/luatex/generic/interpreter
