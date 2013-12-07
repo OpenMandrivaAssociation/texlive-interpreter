@@ -6,7 +6,7 @@
 # catalog-version 1.2
 Name:		texlive-interpreter
 Version:	1.2
-Release:	3
+Release:	4
 Summary:	Translate input files on the fly
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/luatex/generic/interpreter
