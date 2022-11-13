@@ -1,18 +1,12 @@
-# revision 27232
-# category Package
-# catalog-ctan /macros/luatex/generic/interpreter
-# catalog-date 2012-06-10 11:15:14 +0200
-# catalog-license lppl
-# catalog-version 1.2
 Name:		texlive-interpreter
-Version:	1.2
-Release:	11
+Version:	27232
+Release:	1
 Summary:	Translate input files on the fly
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/luatex/generic/interpreter
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/interpreter.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/interpreter.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/interpreter.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/interpreter.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -34,12 +28,12 @@ implemented using the author's gates (lua version), and works
 for plain TeX and LaTeX, but not ConTeXt.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -54,32 +48,10 @@ for plain TeX and LaTeX, but not ConTeXt.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Tue Aug 07 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.2-1
-+ Revision: 812306
-- Update to latest release.
-
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.1-2
-+ Revision: 752800
-- Rebuild to reduce used resources
-
-* Fri Dec 09 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.1-1
-+ Revision: 739783
-- texlive-interpreter
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.0-1
-+ Revision: 718726
-- texlive-interpreter
-- texlive-interpreter
-- texlive-interpreter
-- texlive-interpreter
-
