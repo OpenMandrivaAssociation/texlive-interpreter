@@ -1,6 +1,6 @@
 Name:		texlive-interpreter
 Version:	27232
-Release:	1
+Release:	2
 Summary:	Translate input files on the fly
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/luatex/generic/interpreter
