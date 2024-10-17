@@ -3,7 +3,7 @@ Version:	27232
 Release:	2
 Summary:	Translate input files on the fly
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/luatex/generic/interpreter
+URL:		https://www.ctan.org/tex-archive/macros/luatex/generic/interpreter
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/interpreter.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/interpreter.doc.r%{version}.tar.xz
